@@ -1,0 +1,18 @@
+<Window x:Class="SmartClassroom.Environmental.MainWindow"
+ xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+ xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+ xmlns:vm="clr-namespace:SmartClassroom.Environmental.ViewModels"
+ Title="AV Integrated" Height="400" Width="400">
+ <Window.DataContext><vm:MainViewModel/></Window.DataContext>
+ <Grid Margin="20">
+  <StackPanel>
+   <TextBlock Text="Projector State:" FontSize="20" HorizontalAlignment="Center"/>
+   <TextBlock Text="{Binding AV.ProjectorStateText}" FontSize="26" FontWeight="Bold" 
+              HorizontalAlignment="Center" Margin="0,10"/>
+   <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20" >
+    <Button Content="Power On" Width="100" Margin="5" Command="{Binding AV.PowerOnCommand}"/>
+    <Button Content="Power Off" Width="100" Margin="5" Command="{Binding AV.PowerOffCommand}"/>
+   </StackPanel>
+  </StackPanel>
+ </Grid>
+</Window>
